@@ -32,7 +32,12 @@
 	\pagenumbering{arabic}
 
 	\section{Introduction}
-	Graphviz is a popular opensource tool for visualizing graphs, as its name suggests. In this tutorial, we use it for drawing state diagrams. Thus, we shall be equiped with a powerful tool for designing and illustrating state machines. Graphviz is a package with many capabilities, from which we only use dot, which parses dot language and produces graph visualizations.
+	Graphviz is a popular opensource tool for visualizing graphs, as its name suggests. In this tutorial, we use it for drawing state diagrams. Thus, we shall be equiped with a powerful tool for designing and illustrating state machines. Graphviz is a package with many capabilities, from which we only use dot, which parses dot language and produces graph visualizations. 
+	\newline
+	From the DOT description, many output formats may be generated. One way to generate PNG images, suitable for many usecases, is the following command:
+	\newline \newline
+	
+	\textbf{\lstinline{dot -Tpng [input file name] -o [output file name]}}
 
 	\section{Basic Notation}
 	Graphviz uses DOT Language to describe graphs. A simple DOT description is shown in listing \ref{lst:dot1}.
