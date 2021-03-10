@@ -1,0 +1,9 @@
+graph "demo"
+{
+	graph [dpi = 360];
+	a -- b [color=orange];
+	b -- e [color=yellow];
+	b -- c [color=red];
+	c -- d [color=red];
+	e -- f [color=yellow];
+}
