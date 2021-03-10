@@ -15,7 +15,7 @@
 	tabsize=3,
 	frame=tblr,
 	keywordstyle=\color{blue},
-	morekeywords={graph, digraph}
+	morekeywords={graph, digraph, shape, node}
 }
 
 \title{Graphviz for State Diagrams}
@@ -43,7 +43,7 @@
 		\begin{center}
 			\includegraphics[width=25mm]{figure1.png}
 		\end{center}
-		\caption{dot output for listing 1.}
+		\caption{dot output for listing \ref{lst:dot1}.}
 		\label{fig:png1}
 	\end{figure}
 
@@ -57,5 +57,39 @@
 
 	\subparagraph{Node declaration}
 		Nodes can be implicitly or explicitly declared. In this snippet, they are declared implicitly, through edge definitions.
+	
+	\subsection{Edge Attributes}
+	In general, attributes for nodes, edges and graphs can be assigned using braces, \lstinline{[ ]}. Some common attributes for edges are demonstrated in listing \ref{lst:dot2}.
+
+	\lstinputlisting[caption={Demonstration of some edge attributes},label={lst:dot2} ]{listing2.dot}
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=25mm]{figure2.png}
+		\end{center}
+		\caption{dot output for listing \ref{lst:dot2}.}
+		\label{fig:png2}
+	\end{figure}
+
+	Here, \lstinline{color} and \lstinline{label} attributes of edges have been illustrated. 
+
+	\subsection{Node Attributes}
+	Nodes can also have attributes. In this specific application, we usually would like to choose their shapes, for aesthetic reasons as well as highlighting special nodes. In addition to defining node-specific attributes, it's possible to define global attributes for nodes, which hold true, unless overriden by their node-specific counterparts. The same holds true for edges.
+
+	\lstinputlisting[caption={Demonstrating of node shapes},label={lst:dot3} ]{listing3.dot}
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=25mm]{figure3.png}
+		\end{center}
+		\caption{dot output for listing \ref{lst:dot3} }
+		\label{fig:png3}
+	\end{figure}
+
+	It can be seen that \lstinline{node} defines global attributes.
+
+	\subsection{Common Colors}
+
+	\subsection{Common Node Shapes}
 
 \end{document}

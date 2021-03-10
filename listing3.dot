@@ -1,0 +1,11 @@
+graph "demo"
+{
+	node [shape=circle];
+	b [shape=square];
+	f [shape=rectangle];
+	a -- b;
+	b -- e;
+	b -- c;
+	c -- d;
+	e -- f;
+}

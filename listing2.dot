@@ -1,0 +1,8 @@
+graph "demo"
+{
+	a -- b [label="toggled"];
+	b -- e;
+	b -- c [color=red];
+	c -- d [color=blue];
+	e -- f [color=white, label="I'm here"];
+}
