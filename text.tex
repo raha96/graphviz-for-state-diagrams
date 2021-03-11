@@ -58,7 +58,7 @@
 		Graph must be declared. Its name comes in "double quotes." The keyword \lstinline{digraph} can also be used, indicating a digraph, eg. a directed graph.
 	
 	\subparagraph{Edge declaration}
-		Undirected edges are declared using \lstinline{--} operator. For directed edges, \lstinline{<-} is used. Mixing directed and undirected edges is not supported: Directed edges should only be used in digraphs, while undirected edges should only be used in graphs.
+		Undirected edges are declared using \lstinline{--} operator. For directed edges, \lstinline{->} is used. Mixing directed and undirected edges is not supported: Directed edges should only be used in digraphs, while undirected edges should only be used in graphs.
 
 	\subparagraph{Node declaration}
 		Nodes can be implicitly or explicitly declared. In this snippet, they are declared implicitly, through edge definitions.
@@ -93,8 +93,23 @@
 
 	It can be seen that \lstinline{node} defines global attributes.
 
+	\subsection{Digraphs}
+	A digraph is declared using \lstinline{digraph} keyword in the beginning. The edges are shown using \lstinline{->}.
+
+	\lstinputlisting[caption={Digraph declaration},label={lst:digraph} ]{digraph.dot}
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=25mm]{digraph.png}
+		\end{center}
+		\caption{dot output for listing \{lst:digraph} }
+		\label{fig:digraph}
+	\end{figure}
+
 	\subsection{Common Colors}
 
 	\subsection{Common Node Shapes}
+
+	\section{State Diagrams}
 
 \end{document}

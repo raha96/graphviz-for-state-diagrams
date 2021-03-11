@@ -1,0 +1,8 @@
+digraph "demo"
+{
+	a -> b;
+	b -> e;
+	b -> c;
+	c -> d;
+	e -> f;
+}
