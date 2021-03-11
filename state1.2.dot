@@ -1,0 +1,14 @@
+digraph "state1"
+{
+	graph [dpi=180];
+	node [shape=circle];
+	00 -> 00 [label=0];
+	00 -> 01 [label=1];
+	01 -> 01 [label=0, tailport=w, headport=w];
+	01 -> 11 [label=1];
+	10 -> 10 [label=0];
+	10 -> 00 [label=1];
+	11 -> 11 [label=0];
+	11 -> 00 [label=1];
+	{rank=same; 01, 11};
+}

@@ -5,6 +5,7 @@
 \usepackage{courier}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage[hidelinks]{hyperref}
 
 \definecolor{lightgray}{gray}{0.95}
 
@@ -15,11 +16,11 @@
 	tabsize=3,
 	frame=tblr,
 	keywordstyle=\color{blue},
-	morekeywords={graph, digraph, shape, node}
+	morekeywords={graph, digraph, shape, node, label}
 }
 
 \title{Graphviz for State Diagrams}
-\date{2021-04-10}
+\date{March 2021}
 \author{Raha Moradi Shahmiri\\raham9619@gmail.com}
 
 
@@ -27,6 +28,8 @@
 \begin{document}
 	\pagenumbering{gobble}
 	\maketitle
+	\newpage
+	\tableofcontents
 	\newpage
 
 	\pagenumbering{arabic}
@@ -107,9 +110,73 @@
 	\end{figure}
 
 	\subsection{Common Colors}
+	\subparagraph{TBA}
 
 	\subsection{Common Node Shapes}
+	\subparagraph{TBA}
 
 	\section{State Diagrams}
+	In order to illustrate a state diagram, we can show the state names as node labels, state transitions using edges, and use edge labels to show state transition conditions. In table \ref{tbl:state1} a sample state machine is shown. Its corresponding state diagram is shown in figure \ref{fig:state1}, and its DOT description in listing \ref{lst:state1}.
+
+	\begin{table}[H]
+		\begin{center}
+			\caption{Sample state machine.}
+			\label{tbl:state1}
+			\begin{tabular}{c|c|c|c}
+				\textbf{Input} & \textbf{Current State} & \textbf{Output} & \textbf{Next State}\\
+				\hline
+				0 & 00 & 0 & 00\\
+				1 & 00 & 0 & 01\\
+				0 & 01 & 0 & 01\\
+				1 & 01 & 0 & 11\\
+				0 & 10 & 0 & 10\\
+				1 & 10 & 0 & 00\\
+				0 & 11 & 1 & 11\\
+				1 & 11 & 1 & 00\\
+			\end{tabular}
+		\end{center}
+	\end{table}
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=25mm]{state1.png}
+		\end{center}
+		\caption{Sample state diagram}
+		\label{fig:state1}
+	\end{figure}
+
+	\lstinputlisting[caption={Sample state machine DOT description},label={lst:state1} ]{state1.dot}
+
+	The notation used in this example is already familiar, but we can add a couple commands to make the diagram more visually beautiful. First, we can force the loop on node \lstinline{01} to be shown on the left side of the node:
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=25mm]{state1.1.png}
+		\end{center}
+		\caption{Moved the loop}
+		\label{fig:state1.1}
+	\end{figure}
+
+	\lstinputlisting[caption={Moving the loop in DOT},label={lst:state1.1} ]{state1.1.dot}
+	The \lstinline{headport} and \lstinline{tailport} attributes are self explanatory. Not that \lstinline{nw} stands for 'north west' and \lstinline{sw} stands for 'south west.' It can be inferred that \lstinline{n}, \lstinline{ne}, \lstinline{e}, \lstinline{se}, \lstinline{s}, \lstinline{sw}, \lstinline{w}, \lstinline{nw} are possible values.
+	Next, we can force 01 and 11 to be shown in the same line:
+
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=45mm]{state1.2.png}
+		\end{center}
+		\caption{forced 01 and 11 to be in the same line}
+		\label{fig:state1.2}
+	\end{figure}
+
+	\lstinputlisting[caption={DOT description for figure \ref{fig:state1.2} },label={lst:state1.2} ]{state1.2.dot}
+
+	\lstinline{rank=same} forces the nodes mentioned to be of the same rank, eg. vertical position. Note that \lstinline{dpi} attribute has been used only to improved image quality.
+
+	\section{References}
+	The reference used here is the Graphviz official documentation, available at\newline
+		\url{https://graphviz.org/documentation} \newline
+	In particular, the list of attributes would come in handy:\newline
+		\url{https://graphviz.org/doc/info/attrs.html}
 
 \end{document}
